@@ -41,7 +41,7 @@ Queries to glutton_lastfm methods return hierarchical hash / array strucutres.
 
 As shown above it is best to familarize yourself with the returned data using <tt>pp</tt>.
 
-Here's a look at the returned data in a pseudo-structure.
+Here's a look at the returned data in a pseudo-structure. In reality all hash keys are strings.
 
 * artist_info
 * artist_info_by_mbid
