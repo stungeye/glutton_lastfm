@@ -41,19 +41,84 @@ Queries to glutton_lastfm methods return hierarchical hash / array strucutres.
 
 As shown above it is best to familarize yourself with the returned data using <tt>pp</tt>.
 
-* artist_info  
-* artist_info_by_mbid  
-* album_info 
-* album_info_by_mbid 
+Here's a look at the returned data in a pseudo-structure.
 
-Queries returned as arrays of hashes:
-
-* artist_search 
-* artist_top_albums 
-* artist_top_tracks 
-* atrist_top_tags 
-* artist_events 
-* album_search 
+* artist_info
+* artist_info_by_mbid
+      artist info{
+        name
+        mbid
+        url
+        image[]
+        similar{ artist }[]{ name url image[] }
+        tags{ tag }[]{ name url }
+        bio{ published summary content }
+      }
+* album_info
+* album_info_by_mbid
+      album_info{
+        name
+        artist
+        releasedate
+        url
+        id
+        mbid
+        toptags{ tag }[]{ name url }
+        image[]
+        wiki{ published content summary}
+      }
+* artist_search
+      artist_search[]{
+        name
+        url
+        mbid
+        image[]
+      }
+* album_search
+      album_search[]{
+        name
+        url
+        mbid
+        image[]
+      }
+* artist_top_albums
+      artist_top_albums[]{
+        name
+        mbid
+        rank
+        image[]
+        artist{ name url mbid }
+        url
+      }
+* artist_top_tracks
+      artist_top_tracks[]{
+        name
+        artist{ name url mbid }
+        url
+        rank
+        mbid
+        image[]
+      }
+* atrist_top_tags
+      artist_top_tags[]{
+        name
+        url
+        count
+      }
+* artist_events
+      artist_events[]{
+        artists{ artist headliner }
+        title
+        url
+        startDate
+        id
+        tags{ tag }[]
+        website
+        tickets
+        venue{ name website location{ city country postalcode street geo:point } }
+        description
+        image[]
+      }
 
 == License
 
