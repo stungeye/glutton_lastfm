@@ -9,20 +9,20 @@ See:
 
 == Implemented Methods
 
-<tt>[method invocation]</tt> - [api docs url]:
+<tt>[method invocation]</tt> => [api docs url]:
 
-* <tt>artist_search( artist_name )</tt> - http://www.last.fm/api/show/?service=272
-* <tt>artist_info( artist_name )</tt> - http://www.last.fm/api/show/?service=267
-* <tt>artist_info_by_mbid( artist_musicbrainz_id )</tt> - http://www.last.fm/api/show/?service=267
-* <tt>artist_top_albums( artist_name )</tt> - http://www.last.fm/api/show/?service=287
-* <tt>artist_top_tracks( artist_name )</tt> - http://www.last.fm/api/show/?service=277
-* <tt>atrist_top_tags( artist_name )</tt> - http://www.last.fm/api/show/?service=288
-* <tt>artist_events( artist_name )</tt> - http://www.last.fm/api/show/?service=117
-* <tt>album_search( album_name, artist_name )</tt> - http://www.last.fm/api/show?service=357
-* <tt>album_info( album_name )</tt> - http://www.last.fm/api/show?service=290
-* <tt>album_info_by_mbid( album_musicbrainz_id )</tt> - http://www.last.fm/api/show?service=290
+* <tt>artist_search( artist_name )</tt> => http://www.last.fm/api/show/?service=272
+* <tt>artist_info( artist_name )</tt> => http://www.last.fm/api/show/?service=267
+* <tt>artist_info_by_mbid( artist_musicbrainz_id )</tt> => http://www.last.fm/api/show/?service=267
+* <tt>artist_top_albums( artist_name )</tt> => http://www.last.fm/api/show/?service=287
+* <tt>artist_top_tracks( artist_name )</tt> => http://www.last.fm/api/show/?service=277
+* <tt>atrist_top_tags( artist_name )</tt> => http://www.last.fm/api/show/?service=288
+* <tt>artist_events( artist_name )</tt> => http://www.last.fm/api/show/?service=117
+* <tt>album_search( album_name, artist_name )</tt> => http://www.last.fm/api/show?service=357
+* <tt>album_info( album_name )</tt> => http://www.last.fm/api/show?service=290
+* <tt>album_info_by_mbid( album_musicbrainz_id )</tt> => http://www.last.fm/api/show?service=290
 
-Note: Not all of the last.fm API methods have been implemented. 
+<b>Note:</b> Not all of the last.fm API methods have been implemented. Fork this gem to implement your own using the provided <tt>q</tt> method.
 
 == Examples
 
