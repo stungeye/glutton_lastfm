@@ -7,7 +7,9 @@ See:
 * http://last.fm/api
 * http://httparty.rubyforge.org
 
-== Methods
+== Implemented Methods
+
+<tt>[method invocation]</tt> - [api docs url]:
 
 * <tt>artist_search( artist_name )</tt> - http://www.last.fm/api/show/?service=272
 * <tt>artist_info( artist_name )</tt> - http://www.last.fm/api/show/?service=267
@@ -19,6 +21,8 @@ See:
 * <tt>album_search( album_name, artist_name )</tt> - http://www.last.fm/api/show?service=357
 * <tt>album_info( album_name )</tt> - http://www.last.fm/api/show?service=290
 * <tt>album_info_by_mbid( album_musicbrainz_id )</tt> - http://www.last.fm/api/show?service=290
+
+Note: Not all of the last.fm API methods have been implemented. 
 
 == Examples
 
