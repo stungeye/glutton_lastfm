@@ -1,9 +1,11 @@
 # glutton_lastfm
+#
 # A last.fm Ruby API Wrapper
 #
 # Author         : Wally Glutton - http://stungeye.com
 # Required       : Last.fm API Key - http://www.last.fm/api
 # Gem Dependence : HTTParty - Installed by gem along with glutton_lastfm.
+# Ruby Version   : Written and tested using Ruby 1.8.7.
 # License        : This is free and unencumbered software released into the public domain. See LICENSE for details.
 
 require 'httparty'
@@ -55,7 +57,7 @@ class GluttonLastfm
   #  mbid
   #  rank
   #  image[]
-  #  artist{ 'name' 'url' 'mbid' }
+  #  artist{ name url mbid }
   #  url
   
   def artist_top_albums( artist )
@@ -84,15 +86,15 @@ class GluttonLastfm
   end
   
   #artist_events[]
-  #  artists{ 'artist' 'headliner' }
+  #  artists{ artist headliner }
   #  title
   #  url
   #  startDate
   #  id
-  #  tags['tag'][]
+  #  tags{ tag }[]
   #  website
   #  tickets
-  #  venue{ 'name' 'website' location{ 'city' 'country' 'postalcode' 'street' 'geo:point' }}
+  #  venue{ name website location{ city country postalcode street geo:point } }
   #  description
   #  image[]
   
@@ -108,9 +110,9 @@ class GluttonLastfm
   #  url
   #  id
   #  mbid
-  #  toptags['tag'][]{ 'name' 'url' }
+  #  toptags{ tag }[]{ name url }
   #  image[]
-  #  wiki{ 'published' 'content' 'summary'}
+  #  wiki{ published content summary}
   
   def album_info( artist, album )
     q( :method => 'album.getinfo', :artist => artist, :album => album )['album']
@@ -125,9 +127,9 @@ class GluttonLastfm
   #  mbid
   #  url
   #  image[]
-  #  similar['artist'][]{ 'name' 'url' 'image'[] }
-  #  tags['tag'][]{ 'name' 'url' }
-  #  bio{ 'published' 'summary' 'content' }
+  #  similar{ artist }[]{ name url image[] }
+  #  tags{ tag }[]{ name url }
+  #  bio{ published summary content }
   
   def artist_info( artist )
     q( :method => 'artist.getinfo', :artist => artist )['artist']
@@ -147,7 +149,7 @@ class GluttonLastfm
         raise Unauthorized,  "#{response['lfm']['error'] if response['lfm']} #{options.inspect}"
       when 404
         raise NotFound, options.inspect
-      when 200 # It is perhaps overkill to test all successfully received requests like this.
+      when 200 # Is it overkill to test all successfully received requests like this?
         if response['lfm']
           raise QueryStatusFail, "#{response['lfm']['error']} #{options.inspect}" if response['lfm']['status'] != 'ok'
         else

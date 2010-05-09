@@ -34,6 +34,26 @@ See:
     # Inspect any of the returned structures using pp (pretty print):
     
     pp album_info
+    
+== Query Responses
+
+Queries to glutton_lastfm methods return hierarchical hash / array strucutres.
+
+As shown above it is best to familarize yourself with the returned data using <tt>pp</tt>.
+
+* artist_info  
+* artist_info_by_mbid  
+* album_info 
+* album_info_by_mbid 
+
+Queries returned as arrays of hashes:
+
+* artist_search 
+* artist_top_albums 
+* artist_top_tracks 
+* atrist_top_tags 
+* artist_events 
+* album_search 
 
 == License
 
