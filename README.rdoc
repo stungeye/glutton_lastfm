@@ -1,6 +1,6 @@
 = glutton_lastfm
 
-Simple last.fm API wrapper written using HTTParty. A last.fm API key is required.
+Ruby last.fm API wrapper written using HTTParty. A last.fm API key is required.
 
 See: http://last.fm/api & http://httparty.rubyforge.org
 
@@ -51,7 +51,7 @@ See: http://last.fm/api & http://httparty.rubyforge.org
     
 == Query Responses
 
-Queries to glutton_lastfm methods return hierarchical hash / array strucutres. As shown above, it is best to familarize yourself with the returned data using <tt>pp</tt>.
+Queries to glutton_lastfm methods return hierarchical hash / array strucutres. As shown above, it is best to familarize yourself with the returned data using the <tt>pp</tt> (pretty print) inspector.
 
 Here's a look at the returned data in a pseudo-structure. In reality all hash keys are strings.
 
