@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "glutton_lastfm"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Ruby last.fm API wrapper.}
+    gem.description = %Q{Simple last.fm API wrapper written using HTTParty.}
     gem.email = "stungeye@gmail.com"
     gem.homepage = "http://github.com/stungeye/glutton_lastfm"
     gem.authors = ["Wally Glutton"]
