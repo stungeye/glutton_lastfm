@@ -2,10 +2,7 @@
 
 Simple last.fm API wrapper written using HTTParty. A last.fm API key is required.
 
-See: 
-
-* http://last.fm/api
-* http://httparty.rubyforge.org
+See: http://last.fm/api & http://httparty.rubyforge.org
 
 == Implemented Methods
 
@@ -24,7 +21,7 @@ See:
 
 <b>Note:</b> Not all of the last.fm API methods have been implemented. Fork this gem to implement your own using the provided <tt>q</tt> method.
 
-== Examples
+== Example
 
     require 'rubygems'
     require 'glutton_lastfm'
@@ -54,14 +51,11 @@ See:
     
 == Query Responses
 
-Queries to glutton_lastfm methods return hierarchical hash / array strucutres.
-
-As shown above it is best to familarize yourself with the returned data using <tt>pp</tt>.
+Queries to glutton_lastfm methods return hierarchical hash / array strucutres. As shown above, it is best to familarize yourself with the returned data using <tt>pp</tt>.
 
 Here's a look at the returned data in a pseudo-structure. In reality all hash keys are strings.
 
-* artist_info
-* artist_info_by_mbid
+* artist_info & artist_info_by_mbid
       artist info{
         name
         mbid
@@ -71,8 +65,7 @@ Here's a look at the returned data in a pseudo-structure. In reality all hash ke
         tags{ tag }[]{ name url }
         bio{ published summary content }
       }
-* album_info
-* album_info_by_mbid
+* album_info & album_info_by_mbid
       album_info{
         name
         artist
