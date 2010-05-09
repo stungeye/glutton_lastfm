@@ -5,37 +5,35 @@ Simple last.fm API wrapper written using HTTParty.
 See: 
 
 * http://last.fm/api
-* http://httparty.rubyforge.org/
+* http://httparty.rubyforge.org
 
 == Examples
 
-<tt>
-require 'rubygems'
-require 'glutton_lastfm'
-require 'pp'
-
-last = GluttonLastfm.new '<your last.fm API key>'
-
-artist = 'Green Day'
-
-artist_search       = last.artist_search artist
-artist_info         = last.artist_info artist
-artist_info_by_mbid = last.artist_info_by_mbid '084308bd-1654-436f-ba03-df6697104e19'
-artist_top_albums   = last.artist_top_albums artist
-artist_top_tracks   = last.artist_top_tracks artist
-artist_top_tags     = last.artist_top_tags artist
-artist_events       = last.artist_events artist
-
-album = 'Dookie'
-
-album_search       = last.album_search album
-album_info         = last.album_info artist, album
-album_info_by_mbid = last.album_info_by_mbid '17ca17ed-f061-4d5b-97e2-848d85e47d95'
-
-# Inspect any of the returned structures using pp (pretty print):
-
-pp album_info
-</tt>
+    require 'rubygems'
+    require 'glutton_lastfm'
+    require 'pp'
+    
+    last = GluttonLastfm.new '<your last.fm API key>'
+    
+    artist = 'Green Day'
+    
+    artist_search       = last.artist_search artist
+    artist_info         = last.artist_info artist
+    artist_info_by_mbid = last.artist_info_by_mbid '084308bd-1654-436f-ba03-df6697104e19'
+    artist_top_albums   = last.artist_top_albums artist
+    artist_top_tracks   = last.artist_top_tracks artist
+    artist_top_tags     = last.artist_top_tags artist
+    artist_events       = last.artist_events artist
+    
+    album = 'Dookie'
+    
+    album_search       = last.album_search album
+    album_info         = last.album_info artist, album
+    album_info_by_mbid = last.album_info_by_mbid '17ca17ed-f061-4d5b-97e2-848d85e47d95'
+    
+    # Inspect any of the returned structures using pp (pretty print):
+    
+    pp album_info
 
 == License
 
