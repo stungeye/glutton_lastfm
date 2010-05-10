@@ -8,7 +8,7 @@ See: http://last.fm/api & http://httparty.rubyforge.org
 
     sudo gem install glutton_fm
     
-<b>Note:</b> You should be running version 1.3.6 of the gem command. Run <tt>gem -v</tt> to determine your current version. Run <tt>gem update --system</tt> to upgrade to the latest version.
+<b>Note:</b> You should be using gem command version >= 1.3.6. http://rubygems.org/pages/download
 
 == Implemented Methods
 
