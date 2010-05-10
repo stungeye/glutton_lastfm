@@ -8,8 +8,8 @@ See: http://last.fm/api & http://httparty.rubyforge.org
 
     sudo gem install glutton_fm
     
-<b>Note:</b> You should be using gem command version >= 1.3.6. http://rubygems.org/pages/download
-
+This gem is hosted at: http://rubygems.org/gems/glutton_lastfm/
+    
 == Implemented Methods
 
 <tt>[method invocation]</tt> => [api docs url]:
