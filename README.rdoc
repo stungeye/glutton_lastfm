@@ -8,8 +8,8 @@ See: http://last.fm/api & http://httparty.rubyforge.org
 
     sudo gem install glutton_fm
     
-This gem is hosted at: http://rubygems.org/gems/glutton_lastfm/
-    
+This gem is hosted at: http://rubygems.org/gems/glutton_lastfm
+  
 == Implemented Methods
 
 <tt>[method invocation]</tt> => [api docs url]:
@@ -135,6 +135,13 @@ Here's a look at the returned data in a pseudo-structure. In reality all hash ke
         description
         image[]
       }
+
+== Thanks
+
+Respect to the creators and maintainers of HTTParty and Jeweler.
+
+* http://github.com/jnunemaker/httparty
+* http://github.com/technicalpickles/jeweler
 
 == License
 
