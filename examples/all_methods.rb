@@ -2,7 +2,7 @@ require 'rubygems'
 require 'glutton_lastfm'
 require 'pp'
 
-last = GluttonLastfm.new '923a366899eebed73ba992fff9be063e'
+last = GluttonLastfm.new '<your last.fm API key>'
 
 artist = 'Leonard Cohen'
 
