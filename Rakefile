@@ -6,10 +6,11 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "glutton_lastfm"
     gem.summary = %Q{Ruby last.fm API wrapper.}
-    gem.description = %Q{Simple last.fm API wrapper written using HTTParty.}
+    gem.description = %Q{Simple last.fm API wrapper written using HTTParty in Ruby.}
     gem.email = "stungeye@gmail.com"
     gem.homepage = "http://github.com/stungeye/glutton_lastfm"
     gem.authors = ["Wally Glutton"]
+    gem.add_dependency("httparty", ">= 0.5.0")
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
