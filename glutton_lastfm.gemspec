@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "examples/all_methods.rb",
      "glutton_lastfm.gemspec",
      "lib/glutton_lastfm.rb",
      "test/helper.rb",
@@ -35,7 +36,8 @@ Gem::Specification.new do |s|
   s.summary = %q{Ruby last.fm API wrapper.}
   s.test_files = [
     "test/helper.rb",
-     "test/test_glutton_lastfm.rb"
+     "test/test_glutton_lastfm.rb",
+     "examples/all_methods.rb"
   ]
 
   if s.respond_to? :specification_version then
