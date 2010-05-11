@@ -1,14 +1,14 @@
 = glutton_lastfm
 
-Ruby last.fm API wrapper written using HTTParty. A last.fm API key is required.
-
-See: http://last.fm/api & http://httparty.rubyforge.org
+Simple Ruby wrapper for the last.fm API (version 2.0) written using HTTParty. 
 
 == Installation
 
     sudo gem install glutton_fm
-    
+
 This gem is hosted at: http://rubygems.org/gems/glutton_lastfm
+
+<b>Note:</b> A last.fm API key is also required. http://last.fm/api
   
 == Implemented Methods
 
@@ -142,13 +142,13 @@ Here's a look at the returned data in a pseudo-structure. In reality all hash ke
 
 == Exceptions
 
-The following custom exceptions can be thrown by the library:
+The following custom exceptions may be thrown by the library:
 
 <tt>Unauthorized</tt>::      Access to the API was refused. Check your API key.
 <tt>NotFound</tt>::          Last.fm returned a 404 (Page Not Found) HTTP code for your request.
 <tt>QueryStatusFail</tt>::   Received a well-formed response but the status attribute shows that your request failed.
 <tt>QueryArgumentFail</tt>:: There was a problem with the parameters supplied to the API method.
-<tt>UnknownFail</tt>::       An unanticipated error occurred. If this happens consistently, post a GitHub project issue and include the full Exception text.
+<tt>UnknownFail</tt>::       An unanticipated error occurred. If this happens consistently, post a GitHub project issue.
 
 == Thanks
 
