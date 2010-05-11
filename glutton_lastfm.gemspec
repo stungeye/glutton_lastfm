@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{glutton_lastfm}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Wally Glutton"]
-  s.date = %q{2010-05-09}
+  s.date = %q{2010-05-10}
   s.description = %q{Simple last.fm API wrapper written using HTTParty in Ruby.}
   s.email = %q{stungeye@gmail.com}
   s.extra_rdoc_files = [
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "examples/all_methods.rb",
+     "examples/artist_tags_and_images.rb",
      "glutton_lastfm.gemspec",
      "lib/glutton_lastfm.rb",
      "test/helper.rb",
@@ -37,6 +38,7 @@ Gem::Specification.new do |s|
   s.test_files = [
     "test/helper.rb",
      "test/test_glutton_lastfm.rb",
+     "examples/artist_tags_and_images.rb",
      "examples/all_methods.rb"
   ]
 
