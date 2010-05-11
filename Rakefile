@@ -11,6 +11,7 @@ begin
     gem.homepage = "http://github.com/stungeye/glutton_lastfm"
     gem.authors = ["Wally Glutton"]
     gem.add_dependency("httparty", ">= 0.5.0")
+    gem.add_development_dependency("fakeweb", ">= 1.2.8")
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

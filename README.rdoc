@@ -156,9 +156,10 @@ The following custom exceptions may be thrown by the library:
 
 == Thanks
 
-Respect to the creators and maintainers of HTTParty and Jeweler.
+Respect to the creators and maintainers of HTTParty, FakeWeb and Jeweler.
 
 * http://github.com/jnunemaker/httparty
+* http://github.com/chrisk/fakeweb
 * http://github.com/technicalpickles/jeweler
 
 == License
