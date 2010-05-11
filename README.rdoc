@@ -150,6 +150,10 @@ The following custom exceptions may be thrown by the library:
 <tt>QueryArgumentFail</tt>:: There was a problem with the parameters supplied to the API method.
 <tt>UnknownFail</tt>::       An unanticipated error occurred. If this happens consistently, post a GitHub project issue.
 
+If you receive a <tt>REXML::ParseException</tt> that looks like the following then the last.fm API may be offline:
+
+    /usr/lib/ruby/1.8/rexml/parsers/baseparser.rb:330:in `pull': Missing end tag for 'HR' (got "BODY") (REXML::ParseException)
+
 == Thanks
 
 Respect to the creators and maintainers of HTTParty and Jeweler.
