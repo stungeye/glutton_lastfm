@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
      "glutton_lastfm.gemspec",
      "lib/glutton_lastfm.rb",
      "test/fixtures/artist_info_prince.xml",
+     "test/fixtures/invalid_api_key.xml",
      "test/helper.rb",
      "test/test_glutton_lastfm.rb"
   ]
