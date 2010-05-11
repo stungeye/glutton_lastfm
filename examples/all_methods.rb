@@ -1,3 +1,5 @@
+# Example: Calling all availble glutton_lastfm methods.
+
 require 'rubygems'
 require 'glutton_lastfm'
 require 'pp'
@@ -23,3 +25,4 @@ album_info_by_mbid = last.album_info_by_mbid '256312e7-0377-47e0-b2e6-df2c6e0cd2
 # Inspect any of the returned structures using pp (pretty print):
 
 pp artist_info
+

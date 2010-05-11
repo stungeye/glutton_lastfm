@@ -55,6 +55,8 @@ This gem is hosted at: http://rubygems.org/gems/glutton_lastfm
     
     pp album_info
     
+More examples can be found in the <tt>examples</tt> folder of the source repository.
+    
 == Query Responses
 
 Queries to glutton_lastfm methods return hierarchical hash / array strucutres. As shown above, it is best to familarize yourself with the returned data using the <tt>pp</tt> (pretty print) inspector.
@@ -62,7 +64,7 @@ Queries to glutton_lastfm methods return hierarchical hash / array strucutres. A
 Here's a look at the returned data in a pseudo-structure. In reality all hash keys are strings.
 
 * artist_info & artist_info_by_mbid
-      artist info{
+      artist_info{
         name
         mbid
         url
@@ -135,6 +137,18 @@ Here's a look at the returned data in a pseudo-structure. In reality all hash ke
         description
         image[]
       }
+
+<b>Note:</b> Since these objects are generated from the last.fm XML responses their structure is idiosyncratic; be cautious of inconsistencies and superfluous nesting.
+
+== Exceptions
+
+The following custom exceptions can be thrown by the library:
+
+<tt>Unauthorized</tt>::      Access to the API was refused. Check your API key.
+<tt>NotFound</tt>::          Last.fm returned a 404 (Page Not Found) HTTP code for your request.
+<tt>QueryStatusFail</tt>::   Received a well-formed response but the status attribute shows that your request failed.
+<tt>QueryArgumentFail</tt>:: There was a problem with the parameters supplied to the API method.
+<tt>UnknownFail</tt>::       An unanticipated error occurred. If this happens consistently, post a GitHub project issue and include the full Exception text.
 
 == Thanks
 
