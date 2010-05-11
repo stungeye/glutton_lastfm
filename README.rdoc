@@ -8,7 +8,7 @@ Simple Ruby wrapper for the last.fm API (version 2.0) written using HTTParty.
 
 This gem is hosted at: http://rubygems.org/gems/glutton_lastfm
 
-<b>Note:</b> A last.fm API key is also required. http://last.fm/api
+<b>Note:</b> A last.fm API key is also required. See: http://last.fm/api
   
 == Implemented Methods
 
