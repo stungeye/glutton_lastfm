@@ -4,6 +4,7 @@
 #
 # Author         : Wally Glutton - http://stungeye.com
 # Required       : Last.fm API Key - http://www.last.fm/api
+# Source Repo    : http://github.com/stungeye/glutton_lastfm
 # Gem Dependence : HTTParty - Installed by gem along with glutton_lastfm.
 # Ruby Version   : Written and tested using Ruby 1.8.7.
 # License        : This is free and unencumbered software released into the public domain. See LICENSE for details.
