@@ -10,7 +10,6 @@
 # License        : This is free and unencumbered software released into the public domain. See LICENSE for details.
 
 require 'httparty'
-require 'pp'
 
 class GluttonLastfm
   include HTTParty
