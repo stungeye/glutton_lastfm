@@ -1,0 +1,53 @@
+<lfm status="ok"> 
+<results for="vertex" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/"> 
+<opensearch:Query role="request" searchTerms="vertex" startPage="1" /> 
+<opensearch:totalResults>4</opensearch:totalResults> 
+<opensearch:startIndex>0</opensearch:startIndex> 
+<opensearch:itemsPerPage>30</opensearch:itemsPerPage> 
+<albummatches> 
+<album> 
+    <name>Vertex</name> 
+    <artist>Buck 65</artist> 
+    <id>2047630</id> 
+    <url>http://www.last.fm/music/Buck+65/Vertex</url> 
+    <image size="small">http://images.amazon.com/images/P/B00007KM4U.01._SCMZZZZZZZ_.jpg</image> 
+    <image size="medium">http://images.amazon.com/images/P/B00007KM4U.01._SCMZZZZZZZ_.jpg</image> 
+    <image size="large">http://images.amazon.com/images/P/B00007KM4U.01._SCMZZZZZZZ_.jpg</image> 
+    <image size="extralarge">http://images.amazon.com/images/P/B00007KM4U.01._SCMZZZZZZZ_.jpg</image> 
+    <streamable>1</streamable> 
+</album> 
+<album> 
+    <name>Vertex</name> 
+    <artist>Vertex</artist> 
+    <id>2335428</id> 
+    <url>http://www.last.fm/music/Vertex/Vertex</url> 
+    <image size="small">http://images.amazon.com/images/P/B000005DU3.01.MZZZZZZZ.jpg</image> 
+    <image size="medium">http://images.amazon.com/images/P/B000005DU3.01.MZZZZZZZ.jpg</image> 
+    <image size="large">http://images.amazon.com/images/P/B000005DU3.01.MZZZZZZZ.jpg</image> 
+    <image size="extralarge">http://images.amazon.com/images/P/B000005DU3.01.MZZZZZZZ.jpg</image> 
+    <streamable>0</streamable> 
+</album> 
+<album> 
+    <name>Late Arrival</name> 
+    <artist>Vertex, Shocka</artist> 
+    <id>25158539</id> 
+    <url>http://www.last.fm/music/Vertex%2C+Shocka/Late+Arrival</url> 
+    <image size="small">http://userserve-ak.last.fm/serve/34s/33053495.jpg</image> 
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/33053495.jpg</image> 
+    <image size="large">http://userserve-ak.last.fm/serve/126/33053495.jpg</image> 
+    <image size="extralarge">http://userserve-ak.last.fm/serve/300x300/33053495.jpg</image> 
+    <streamable>0</streamable> 
+</album> 
+<album> 
+    <name>Vertex Interface Σ</name> 
+    <artist>レンマ:GEAR</artist> 
+    <id>67938792</id> 
+    <url>http://www.last.fm/music/%E3%83%AC%E3%83%B3%E3%83%9E%3AGEAR/Vertex+Interface+%CE%A3</url> 
+    <image size="small">http://userserve-ak.last.fm/serve/34s/28148965.jpg</image> 
+    <image size="medium">http://userserve-ak.last.fm/serve/64s/28148965.jpg</image> 
+    <image size="large">http://userserve-ak.last.fm/serve/126/28148965.jpg</image> 
+    <image size="extralarge">http://userserve-ak.last.fm/serve/300x300/28148965.jpg</image> 
+    <streamable>1</streamable> 
+</album> 
+</albummatches> 
+</results></lfm> 

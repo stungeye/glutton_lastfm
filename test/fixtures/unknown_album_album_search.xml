@@ -1,0 +1,9 @@
+<lfm status="ok"> 
+<results for="nowaytherebeanalbumnamedthis" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/"> 
+<opensearch:Query role="request" searchTerms="nowaytherebeanalbumnamedthis" startPage="1" /> 
+<opensearch:totalResults>0</opensearch:totalResults> 
+<opensearch:startIndex>0</opensearch:startIndex> 
+<opensearch:itemsPerPage>30</opensearch:itemsPerPage> 
+<albummatches> 
+</albummatches> 
+</results></lfm> 

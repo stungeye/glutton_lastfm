@@ -10,6 +10,7 @@
 # License        : This is free and unencumbered software released into the public domain. See LICENSE for details.
 
 require 'httparty'
+require 'pp'
 
 class GluttonLastfm
   include HTTParty
@@ -34,29 +35,41 @@ class GluttonLastfm
   end
   
   def artist_search( artist )
-    q( :method => 'artist.search', :artist => artist )['results']['artistmatches']['artist']
+    query = q( :method => 'artist.search', :artist => artist )['results']
+    if query['artistmatches'].nil?
+      []
+    else
+      fix_empties_or_singles query['artistmatches'], 'artist'
+    end
   end
   
   def album_search( album )
-    q( :method => 'album.search', :album => album )['results']['albummatches']['album']
+    query = q( :method => 'album.search', :album => album )['results']
+    if query['albummatches'].nil?
+      []
+    else
+      fix_empties_or_singles query['albummatches'], 'album'
+    end
   end
    
   def artist_top_albums( artist )
-    query = q( :method => 'artist.gettopalbums', :artist => artist )['topalbums']['album']
-    (query.class == Array) ? query : [query]
+    query = q( :method => 'artist.gettopalbums', :artist => artist )['topalbums']
+    fix_empties_or_singles query, 'album'
   end
   
   def artist_top_tracks( artist )
-    query = q( :method => 'artist.gettoptracks', :artist => artist )
+    query = q( :method => 'artist.gettoptracks', :artist => artist )['toptracks']
+    fix_empties_or_singles query, 'track'
   end
   
   def artist_top_tags( artist )
-    query = q( :method => 'artist.gettoptags', :artist => artist )
+    query = q( :method => 'artist.gettoptags', :artist => artist )['toptags']
+    fix_empties_or_singles query, 'tag'
   end
   
   def artist_events( artist )
-    response = q( :method => 'artist.getevents', :artist => artist )['events']
-    (response['total'].to_i == 0) ? [] : response['event']
+    query = q( :method => 'artist.getevents', :artist => artist )['events']
+    fix_empties_or_singles query, 'event'
   end
   
   def album_info( artist, album )
@@ -76,6 +89,15 @@ class GluttonLastfm
   end
   
   private
+  
+  # When fetching a plural resource we sometimes have to fix the returned data.
+  # When no data is found we return an empty array.
+  # When one item is found it must be placed in an array.
+  # Note: Extra guards are needed above for the album/artist searches.
+  def fix_empties_or_singles query, key
+    query = query[key].nil? ? [] : query[key]
+    (query.class == Array) ? query : [query]
+  end
 
   def raise_errors(response, options)
     case response.code.to_i

@@ -154,6 +154,13 @@ The following custom exceptions may be thrown by the library:
 
     /usr/lib/ruby/1.8/rexml/parsers/baseparser.rb:330:in `pull': Missing end tag for 'HR' (got "BODY") (REXML::ParseException)
 
+== Change Log
+
+0.1.0 - Initial release.
+0.1.1 - Minor post-initial release patch.
+0.1.2 - Yanked bad fix.
+0.1.3 - Methods that return arrays (i.e. all methods other than the info ones) were fixed for result sizes of zero or one. (See: fix_empties_or_singles)
+
 == Thanks
 
 Respect to the creators and maintainers of HTTParty, FakeWeb and Jeweler.

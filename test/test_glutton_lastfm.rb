@@ -1,17 +1,13 @@
 require 'helper'
 
-# I'm currently only testing two methods and one exception.
 # HTTP calls are replaced by fixture file responses using the fakeweb gem.
+# Because of this the API_KEY can be left blank.
 
 class TestGluttonLastfm < Test::Unit::TestCase
-  LASTFM_API_KEY = '923a366899eebed73ba992fff9be063e'
+  LASTFM_API_KEY = ''
   
   def setup
     @lastfm = GluttonLastfm.new LASTFM_API_KEY
-  end
-  
-  def test_api_key_is_set
-    assert_not_equal(LASTFM_API_KEY, '<your last.fm API key>')
   end
   
   def test_object_creations
@@ -48,5 +44,57 @@ class TestGluttonLastfm < Test::Unit::TestCase
     one_album_top_albums = @lastfm.artist_top_albums('Atmosphere')
     assert_equal(one_album_top_albums[0]['name'], 'God Loves Ugly')
   end
-   
+  
+  def test_unknown_artist_top_albums
+    stub_get("http://ws.audioscrobbler.com/2.0?api_key=#{LASTFM_API_KEY}&method=artist.gettopalbums&artist=nowaytherebeanartistnamedthis", 'unknown_artist_top_albums.xml')
+    assert_raise(GluttonLastfm::QueryStatusFail) { @lastfm.artist_top_albums('nowaytherebeanartistnamedthis') }
+  end
+  
+  def test_artist_no_albums_top_albums
+    stub_get("http://ws.audioscrobbler.com/2.0?api_key=#{LASTFM_API_KEY}&method=artist.gettopalbums&artist=Wally%20Glutton", 'artist_no_albums_top_albums.xml')
+    top_albums = @lastfm.artist_top_albums('Wally Glutton')
+    assert_equal(top_albums.size, 0)
+  end  
+  
+  def test_artist_no_tags_top_tags
+    stub_get("http://ws.audioscrobbler.com/2.0?api_key=#{LASTFM_API_KEY}&method=artist.gettoptags&artist=Wally%20Glutton", 'artist_no_tags_top_tags.xml')
+    top_tags = @lastfm.artist_top_tags('Wally Glutton')
+    assert_equal(top_tags.size, 0)
+  end  
+  
+  def test_artist_multi_tags_top_tags
+    stub_get("http://ws.audioscrobbler.com/2.0?api_key=#{LASTFM_API_KEY}&method=artist.gettoptags&artist=Buck%2065", 'artist_multi_tags_top_tags.xml')
+    top_tags = @lastfm.artist_top_tags('Buck 65')
+    assert_equal(top_tags[0]['name'], 'Hip-Hop')
+  end
+  
+  def test_artist_no_events
+    stub_get("http://ws.audioscrobbler.com/2.0?api_key=#{LASTFM_API_KEY}&method=artist.getevents&artist=Wally%20Glutton", 'artist_no_events.xml')
+    events = @lastfm.artist_events('Wally Glutton')
+    assert_equal(events.size, 0)
+  end
+  
+  def test_unknown_artist_artist_search
+    stub_get("http://ws.audioscrobbler.com/2.0?api_key=#{LASTFM_API_KEY}&method=artist.search&artist=nowaytherebeanartistnamedthis", 'unknown_artist_artist_search.xml')
+    artists = @lastfm.artist_search('nowaytherebeanartistnamedthis')
+    assert_equal(artists.size, 0)
+  end
+  
+  def test_known_artist_artist_serach
+    stub_get("http://ws.audioscrobbler.com/2.0?api_key=#{LASTFM_API_KEY}&method=artist.search&artist=weakerthans", 'known_artist_artist_search.xml')
+    artists = @lastfm.artist_search('weakerthans')
+    assert_equal(artists[0]['name'], 'The Weakerthans')
+  end
+  
+  def test_unknown_album_album_search
+    stub_get("http://ws.audioscrobbler.com/2.0?api_key=#{LASTFM_API_KEY}&method=album.search&album=nowaytherebeanalbumnamedthis", 'unknown_album_album_search.xml')
+    albums = @lastfm.album_search('nowaytherebeanalbumnamedthis')
+    assert_equal(albums.size, 0)
+  end
+  
+  def test_known_album_album_serach
+    stub_get("http://ws.audioscrobbler.com/2.0?api_key=#{LASTFM_API_KEY}&method=album.search&album=vertex", 'known_album_album_search.xml')
+    albums = @lastfm.album_search('vertex')
+    assert_equal(albums[0]['name'], 'Vertex')
+  end
 end

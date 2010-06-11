@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{glutton_lastfm}
-  s.version = "0.1.1"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Wally Glutton"]
-  s.date = %q{2010-05-10}
+  s.date = %q{2010-06-11}
   s.description = %q{Simple last.fm API wrapper written using HTTParty in Ruby.}
   s.email = %q{stungeye@gmail.com}
   s.extra_rdoc_files = [
@@ -28,7 +28,18 @@ Gem::Specification.new do |s|
      "glutton_lastfm.gemspec",
      "lib/glutton_lastfm.rb",
      "test/fixtures/artist_info_prince.xml",
+     "test/fixtures/artist_multi_tags_top_tags.xml",
+     "test/fixtures/artist_no_albums_top_albums.xml",
+     "test/fixtures/artist_no_events.xml",
+     "test/fixtures/artist_no_tags_top_tags.xml",
      "test/fixtures/invalid_api_key.xml",
+     "test/fixtures/known_album_album_search.xml",
+     "test/fixtures/known_artist_artist_search.xml",
+     "test/fixtures/multi_album_top_albums.xml",
+     "test/fixtures/one_album_top_albums.xml",
+     "test/fixtures/unknown_album_album_search.xml",
+     "test/fixtures/unknown_artist_artist_search.xml",
+     "test/fixtures/unknown_artist_top_albums.xml",
      "test/helper.rb",
      "test/test_glutton_lastfm.rb"
   ]
