@@ -4,7 +4,7 @@ require 'helper'
 # HTTP calls are replaced by fixture file responses using the fakeweb gem.
 
 class TestGluttonLastfm < Test::Unit::TestCase
-  LASTFM_API_KEY = '<your last.fm API key>'
+  LASTFM_API_KEY = '923a366899eebed73ba992fff9be063e'
   
   def setup
     @lastfm = GluttonLastfm.new LASTFM_API_KEY
@@ -36,4 +36,17 @@ class TestGluttonLastfm < Test::Unit::TestCase
     stub_get("http://ws.audioscrobbler.com/2.0?api_key=invalid_key&method=artist.getinfo&artist=Prince", 'invalid_api_key.xml', 403)
     assert_raise(GluttonLastfm::Unauthorized) { lastfm_bad_key.artist_info('Prince') }
   end
+  
+  def test_can_handle_one_album_top_albums
+    stub_get("http://ws.audioscrobbler.com/2.0?api_key=#{LASTFM_API_KEY}&method=artist.gettopalbums&artist=Foxboro%20Hot%20Tubs", 'one_album_top_albums.xml')
+    one_album_top_albums = @lastfm.artist_top_albums('Foxboro Hot Tubs')
+    assert_equal(one_album_top_albums[0]['name'], 'Coolest Songs In The World! Vol. 7')
+  end
+  
+  def test_can_handle_multi_album_top_albums
+    stub_get("http://ws.audioscrobbler.com/2.0?api_key=#{LASTFM_API_KEY}&method=artist.gettopalbums&artist=Atmosphere", 'multi_album_top_albums.xml')
+    one_album_top_albums = @lastfm.artist_top_albums('Atmosphere')
+    assert_equal(one_album_top_albums[0]['name'], 'God Loves Ugly')
+  end
+   
 end

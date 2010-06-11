@@ -42,15 +42,16 @@ class GluttonLastfm
   end
    
   def artist_top_albums( artist )
-    q( :method => 'artist.gettopalbums', :artist => artist )['topalbums']['album']
+    query = q( :method => 'artist.gettopalbums', :artist => artist )['topalbums']['album']
+    (query.class == Array) ? query : [query]
   end
   
   def artist_top_tracks( artist )
-    q( :method => 'artist.gettoptracks', :artist => artist )['toptracks']['track']
+    query = q( :method => 'artist.gettoptracks', :artist => artist )
   end
   
   def artist_top_tags( artist )
-    q( :method => 'artist.gettoptags', :artist => artist )['toptags']['tag']
+    query = q( :method => 'artist.gettoptags', :artist => artist )
   end
   
   def artist_events( artist )
